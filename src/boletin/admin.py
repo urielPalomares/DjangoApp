@@ -7,7 +7,10 @@ from django.contrib import admin
 from .models import Registrado
 
 class AdminResgistrado(admin.ModelAdmin):
-    list_display = ["__unicode__", "nombre", "timestamp"]
+    list_display = ["email", "nombre", "timestamp"]
+    list_filter = ["timestamp"]
+    list_editable = ["nombre"]
+    search_fields = ["email", "nombre"]
     class Meta:
         model = Registrado
 
